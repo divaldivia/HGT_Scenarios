@@ -1,0 +1,61 @@
+\documentclass[10pt,a4paper,notitlepage]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+%We will proceed by contradiction. 
+%Suppose that **.
+%
+%Let $V(G)=\{g_{1},g_{2},g_{3},g_{4}\}$. We will construct G with the constrains given by its degree sequence.
+%
+%Without loss of generality, suppose that:
+%	\begin{enumerate}
+%		\item	For $g_{3}$ and $g_{4}$,  $d_{in}(g_{3})=d_{in}(g_{4})=3$.
+%			
+%		Since G is not a multigraph, $\forall i,j \in \{1,..,4\}$, $g_{i}, g_{j}$ have at most one directed edge $e=(g_{i}, g_{j})$ if $i \neq j$, and cannot have an edge $e=(g_{i}, g_{i})$. Hence, the only way of having $d_{in}(g_{i})=3$, in a graph of order 4, is by directing exactly one edge from  each $g_{j}, j \neq i$. This constrain give us with the following subgraph of G :
+%		
+%		\item For $g_{1}$ and $g_{2}$,  $d_{in}(g_{1})=d_{in}(g_{2})=1$.
+%		
+%		Observe that the subgraph obtained in 1. generates $d_{out}(g_{1})=d_{out}(g_{2})=2$ which is the out-degree of all the vertices. This means that the edges $(g_{1}, g_{2})$ and $(g_{2}, g_{1})$ cannot exist. So, our only posibilties to construct the in-degree sequence for  $g_{1}$ and $g_{2}$ is directing edges from $g_{3}$ or $g_{4}$.
+%		Lets assume that the edges directed to $g_{1}$ and $g_{2}$ comes, without loss of generality, only from $g_{3}$. In this case, $d_{out}(g_{3})=3$ insted of 2. Therefore, we must have one edge from $g_{3}$ and another one from $g_{4}$. With this last constrain, degree sequence is satisficed and give us two possible graphs, $G'$ and $G''$, as candidates for G:
+%		
+%		
+%		Note that $G' \cong G''$ and $G'=G_{1}$. So, in case, $G \cong G_{1}$, which is a contradiction to the initial hypotesis.  
+%	\end{enumerate}		
+\section*{HGT scenarios: four species and five genes}	
+
+\subsection{Possible scenarios}
+
+There are only two topologies for a four-species tree:
+	\begin{center}
+		\includegraphics[scale=1]{casos_generales_4sp5g.jpg}
+	\end{center}
+
+
+\subsection{Colored-orthology graphs}
+
+\subsection{Coloring the scenarios}
+
+\subsection{How to identify HGT and correct the orthology graph}
+	Let T be a tree with $L_T=\{ g_1, g_2, g_3, g_4, g_5\}$ which correspond to four species $A, B, C$ and $D$, and say that $g_1$ and $g_2$ are in the same species, implying that one of them was acquired via HGT. 
+	\\
+	How to correct the orthology graph of T:
+	\begin{enumerate}
+		\item Identify the HGT donor ($h$) and receptor ($h'$):
+			\begin{itemize}
+				\item Let $G_1$ and $G_2$ be the sets of four genes such that $\{g_1, g_2, h\}$ is a subset.
+				\item Generate the colored orthology graphs for $S_1$ and $S_2$ and add them to generate a five-vertex graph with 					two colors.
+				\item Identify the bidirectional edges of $g_1$ and $g_2$.
+				\item Choose as $h'$, the vertex which has a bi-colored and bidirectional edge.
+				\item \textit{Choose as $h$ the other vertex of this bi-colored and bidirectional edge.}
+			\end{itemize}
+		\item Delete $h'$ and its edges from the five-vertex graph.
+		\item Complete the unidirectional edges to bidirectional edges. 
+	\end{enumerate}
+	
+
+\end{document}
