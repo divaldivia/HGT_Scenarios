@@ -12,12 +12,21 @@
 \subsection{Possible scenarios}
 
 
-\subsection{Colored-orthology graphs}
+\subsection{Colored proteinortho graphs}
+%L_T is the gene set. Define the sets S_1 and S_2 
+In each proteinorto graph, draw with color (not black) an edge $e$ iff it is directed to/from the donor ($h$) or the receptor ($h'$) of the HGT, i.e, 
+		\begin{center}
+			 $e=(h,x),e=(x,h),e=(h',x)$ or $e=(x,h')$, $\forall x\in L_T$\\
+		\end{center}
 
+We will \textit{add} the two colored graphs by ovelaping them. The result will be a five-vertex graph, the \textit{colored proteinortho graph}.
+% Example:
 \subsection{Coloring the scenarios}
-
+	\subsubsection{Scenarios for $T_1$}
+	\subsubsection{Scenarios for $T_2$}		
+	
 \subsection{How to identify HGT and correct the orthology graph}
-	Let T be a tree with $L_T=\{ g_1, g_2, g_3, g_4, h\}$ which correspond to four species $A, B, C$ and $D$, and say that $g_1$ and $g_2$ are in the same species, implying that one of them was acquired via HGT. We assume it is known which is the HGT donor ($h$). 
+	Let T be a tree with $L_T=\{ g_1, g_2, g_3, g_4, h\}$ which correspond to four species $A, B, C$ and $D$, and say that $g_1$ and $g_2$ are in the same species, implying that one of them was acquired via HGT. We assume it is known which gene is the HGT donor ($h$). 
 	\\
 	How to correct the orthology graph of T:
 	\begin{enumerate}
@@ -26,7 +35,7 @@
 				\item Let $G_1$ and $G_2$ be the sets of four genes such that $\{g_1, g_2, h\} \in G_1,G_2$.
 				\item Generate the colored orthology graphs for $G_1$ and $G_2$ and add them to generate a five-vertex graph with two colors.
 				\item Identify the bidirectional edges of $g_1$ and $g_2$.
-				\item Choose as $h'$, the vertex ($g_1$ or  $g_2$) which has a bi-colored and bidirectional edge.
+				\item Choose as $h'$, the vertex ($g_1$ or  $g_2$) which has a bicolored and bidirectional edge.
 %				\item \textit{Choose as $h$ the other vertex of this bi-colored and bidirectional edge.}
 			\end{itemize}
 		\item Delete $h'$ and its edges from the five-vertex graph.
